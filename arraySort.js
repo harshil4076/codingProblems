@@ -57,4 +57,33 @@ function negativeSort (input) {
     return res
 }
 
-console.log(negativeSort([-12, 11, -13, -5, 6, -7, 5, -3, -6]))
+// console.log(negativeSort([-12, 11, -13, -5, 6, -7, 5, -3, -6]))
+
+function unionIntersection(arr1, arr2){
+    let arr = [...arr1, ...arr2]
+    let freq = {}
+    let union = []
+    let intersection = []
+    for (i=0; i<arr.length-1;i++){
+        if(freq[arr[i]]){
+            freq[arr[i]]++
+        }
+        else if(!freq[arr[i]]){
+            freq[arr[i]] = 1
+        }
+    }
+    console.log(freq)
+        for(let item in freq){
+            if(item == 2){
+                let int = parseInt(item)
+                union.push(int)
+            }
+        }
+        intersection = Object.keys(freq).map(item => parseInt(item)) 
+        
+    return {
+        union : union,
+        intersection : intersection
+    }
+}
+console.log(unionIntersection([1,2,3,4], [2,4,5,6,7]))
