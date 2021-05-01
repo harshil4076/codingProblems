@@ -86,4 +86,15 @@ function unionIntersection(arr1, arr2){
         intersection : intersection
     }
 }
-console.log(unionIntersection([1,2,3,4], [2,4,5,6,7]))
+// console.log(unionIntersection([1,2,3,4], [2,4,5,6,7]))
+
+function rotate(arr){
+
+    let temp 
+    temp = arr[arr.length-1]
+    arr.pop()
+    arr.unshift(temp)
+    // arr.shift() 
+    return arr
+}
+console.log(rotate([1,2,3,4,5]))
